@@ -1,0 +1,173 @@
+/* Base */
+* { box-sizing: border-box; }
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --ink: #111827;
+  --primary: #2563eb;
+  --success: #16a34a;
+  --warn: #f59e0b;
+  --dark: #111827;
+  --border: #e5e7eb;
+  --radius: 14px;
+  --shadow: 0 4px 16px rgba(0,0,0,.06);
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  padding: 24px;
+}
+
+/* Header */
+.app-header { display:flex; justify-content:center; margin-bottom: 12px; }
+.app-title { margin:0; font-weight:700; font-size: 22px; }
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 920px) {
+  .grid { grid-template-columns: 1fr; }
+  .col-left, .col-main { width: 100%; }
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.card-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  display:flex; align-items:center; gap:8px;
+}
+.card-title .subtitle { color: var(--muted); font-weight: 400; margin-left: 8px; font-size: 12px; }
+
+.label { font-size: 12px; color: var(--muted); margin-bottom: 6px; display:block; }
+
+/* Inputs */
+textarea, input[type="text"], input[type="number"] {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+textarea { resize: vertical; min-height: 120px; }
+
+.radio-row { display:flex; gap:10px; align-items:center; margin: 8px 0; }
+.radio { display:flex; align-items:center; gap:10px; cursor: pointer; }
+.radio input { transform: translateY(1px); }
+.swatch { width: 16px; height:16px; border-radius:4px; border:1px solid var(--border); display:inline-block; }
+.swatch-white { background:#f3f4f6; }
+.swatch-black { background:#111827; }
+
+/* Buttons */
+.btn-row { display:flex; gap:10px; flex-wrap:wrap; }
+.btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn:hover { filter: brightness(0.98); }
+.btn-primary { background: var(--primary); color:#fff; border-color: transparent; }
+.btn-success { background: var(--success); color:#fff; border-color: transparent; }
+.btn-warn { background: var(--warn); color:#111; border-color: transparent; }
+.btn-dark { background: var(--dark); color:#fff; border-color: transparent; }
+
+.muted { color: var(--muted); font-size: 13px; }
+
+/* Preview */
+.card-preview .preview-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px dashed var(--border);
+  min-height: 420px;
+}
+#canvas {
+  display:none; /* shown after generate by script.js; placeholder visible initially */
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+.preview-placeholder {
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap: 6px;
+  color: var(--muted);
+  text-align:center;
+  pointer-events:none;
+}
+.placeholder-icon { font-size: 36px; line-height: 1; }
+.placeholder-title { font-weight: 600; }
+.placeholder-text { font-size: 12px; }
+
+/* Pricing */
+#priceArea textarea { min-height: 160px; margin-top: 8px; }
+#priceArea .btn-row { margin-top: 8px; }
+
+/* Modal */
+.modal {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  background: rgba(17,24,39,0.4);
+  z-index: 1000;
+}
+.modal-card {
+  width: min(720px, 96vw);
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.modal-header { padding: 14px 16px; border-bottom:1px solid var(--border); }
+.modal-body {
+  display:grid; gap:10px; grid-template-columns: repeat(2, 1fr);
+  padding: 16px;
+}
+.modal-body label { display:flex; justify-content: space-between; align-items:center; gap: 10px; }
+.modal-body input { width: 140px; }
+.modal-actions {
+  display:flex; justify-content:flex-end; gap:10px;
+  padding: 14px 16px; border-top:1px solid var(--border);
+}
+
+/* Keep original status & price text spacing consistent */
+#status, #price { white-space: pre-line; }
+
+
+/* --- Visibility fix for canvas --- */
+#canvas {
+  display: block;            /* make sure it's visible */
+  width: 100%;
+  height: auto;
+  position: relative;        /* layer above placeholder */
+  z-index: 2;
+}
+.preview-placeholder {
+  z-index: 1;                /* keep behind canvas so drawing is visible */
+}
