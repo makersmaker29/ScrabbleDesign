@@ -176,12 +176,7 @@ document.getElementById('gen').onclick = () => {
   // calculate layout info for display
   const g = allLayouts[currentIndex];  // FIX: don't use incremented index
   const i = countLettersAndFrame(g);
-  // SMALL (4cm)
-const height4 = (rows * 4) + 20;
-const width4  = (cols * 4) + 8;
-// BIG (6cm)
-const height6 = (rows * 6) + 20;
-const width6  = (cols * 6) + 8;
+
 //  document.getElementById('status').innerText = `Letters: ${i.letters}\n4cm: ${i.frame4} cm\n6cm: ${i.frame6} cm\nLayout ${currentIndex + 1} of ${allLayouts.length}`;
  document.getElementById('status').innerText =`Letters: ${totalTiles}\n4cm: ${Math.round(height4)} × ${Math.round(width4)} cm\n6cm: ${Math.round(height6)} × ${Math.round(width6)} cm\nLayout ${currentIndex + 1} of ${layouts.length}`;
 
