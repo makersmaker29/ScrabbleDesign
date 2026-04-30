@@ -106,35 +106,8 @@ function findAllFullLayouts(words, maxLayouts = 50, maxAttempts = 500) {
 
 function countLettersAndFrame(g) {
   let minR=H,maxR=0,minC=W,maxC=0,letters=0;
-  g.forEach((row,r)=>row.forEach((ch,c)=>{
-    if(ch){
-      letters++;
-      minR=Math.min(minR,r);
-      maxR=Math.max(maxR,r);
-      minC=Math.min(minC,c);
-      maxC=Math.max(maxC,c);
-    }
-  }));
-
-  const w = maxC - minC + 1;
-  const h = maxR - minR + 1;
-
-  // Match the approximate frame size calculation used in the pricing section:
-  // Height = tile rows × tile size + 20cm
-  // Width  = tile columns × tile size + 8cm
-  const h4 = h * 4 + 20;
-  const w4 = w * 4 + 8;
-  const h6 = h * 6 + 20;
-  const w6 = w * 6 + 8;
-
-  return {
-    letters,
-    width: w,
-    height: h,
-    frame4: `${h4}cm (H) x ${w4}cm (W)`,
-    frame6: `${h6}cm (H) x ${w6}cm (W)`,
-    h4, w4, h6, w6
-  };
+  g.forEach((row,r)=>row.forEach((ch,c)=>{ if(ch){ letters++; minR=Math.min(minR,r); maxR=Math.max(maxR,r); minC=Math.min(minC,c); maxC=Math.max(maxC,c); } }));
+  const w=maxC-minC+1, h=maxR-minR+1; return { letters, width: w, height: h, frame4: `${w*4} x ${h*4}`, frame6: `${w*6} x ${h*6}` };
 }
 function draw(g) {
   const combo = document.querySelector('input[name="style"]:checked').value;
@@ -203,7 +176,7 @@ document.getElementById('gen').onclick = () => {
   // calculate layout info for display
   const g = allLayouts[currentIndex];  // FIX: don't use incremented index
   const i = countLettersAndFrame(g);
-  document.getElementById('status').innerText = `Letters: ${i.letters}\nSmall Frame (4cm tiles): Approx. ${i.frame4}\nBig Frame (6cm tiles): Approx. ${i.frame6}\nLayout ${currentIndex + 1} of ${allLayouts.length}`;
+  document.getElementById('status').innerText = `Letters: ${i.letters}\n4cm: ${i.frame4} cm\n6cm: ${i.frame6} cm\nLayout ${currentIndex + 1} of ${allLayouts.length}`;
 
   // NOW increment for next cycle
   currentIndex = (currentIndex + 1) % allLayouts.length;
