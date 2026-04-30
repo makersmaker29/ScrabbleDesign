@@ -178,7 +178,7 @@ document.getElementById('gen').onclick = () => {
   const i = countLettersAndFrame(g);
 
 document.getElementById('status').innerText = `Letters: ${i.letters}\n4cm: ${i.frame4} cm\n6cm: ${i.frame6} cm\nLayout ${currentIndex + 1} of ${allLayouts.length}`;
- //document.getElementById('status').innerText =`Letters: ${totalTiles}\n4cm: ${Math.round(height4)} × ${Math.round(width4)} cm\n6cm: ${Math.round(height6)} × ${Math.round(width6)} cm\nLayout ${currentIndex + 1} of ${layouts.length}`;
+
 
   // NOW increment for next cycle
   currentIndex = (currentIndex + 1) % allLayouts.length;
