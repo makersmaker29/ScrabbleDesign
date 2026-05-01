@@ -228,45 +228,45 @@ document.getElementById('calc').onclick = () => {
   const bigBlackPrice = sell6 + bigBlackExtra;
 
   document.getElementById('priceText').value =
-    `📌 Below is the Scrabble Family Name Art price detail :)
+    `📌Berikut adalah butiran harga untuk Scrabble Family Name Art :)
 
 ` +
-    `Small Frame
+    `Small Frame (Frame Kecil- setiap huruf 4cm )
 ` +
     `• 🏳 White Combo Frame (RM ${sell4})
 ` +
     `• ⚫ Black Combo Frame (RM ${smallBlackPrice})
 ` +
-    `• Size: Approx. ${h4}cm (H) x ${w4}cm (W)
+    `• Size: Anggaran. ${h4}cm (H) x ${w4}cm (W)
 
 ` +
-    `Big Frame
+    `Big Frame (Frame Besar - Setiap huruf 6cm )
 ` +
     `• 🏳 White Combo Frame (RM ${sell6})
 ` +
     `• ⚫ Black Combo Frame (RM ${bigBlackPrice})
 ` +
-    `• Size: Approx. ${h6}cm (H) x ${w6}cm (W)
+    `• Size: Anggaran. ${h6}cm (H) x ${w6}cm (W)
 
    ` +
-    `📦 Delivery: Standard: 10-15 days (Express available upon request)
-` +
-    `💰 Payment: Bank Transfer (DuitNow)
+    `📦 Penghantaran: Standard 10–15 hari (Express tersedia atas permintaan)
+    `💰 Pembayaran: Bank Transfer (DuitNow)
 
 ` +
-    `To Proceed:
+    `Untuk teruskan pesanan:
 ` +
-    `✅ Confirm Frame Color combination (black/white) 
+    `✅ Pilih kombinasi warna frame (hitam/putih)
 ` +
-    `✅ Choose size (big/small)
+    `✅ Pilih saiz (besar/kecil)
 ` +
-    `✅ Choose the name combination Option
+    `✅ Pilih susunan nama (Option)
 ` +
-    `✅ Choose a Title (Choose from our list)
+    `✅ Pilih tajuk (rujuk senarai kami)
 ` +
     `✅ Provide Your Delivery Address
 ` +
-    `Once confirmed, I'll share payment details. Let me know if you have any questions! 😊`;
+    `Saya akan kongsikan butiran pembayaran setlah membuat pemilahan ye Beritahu saya jika ada sebarang pertanyaan ya 😊`;
+
 
 };
  
