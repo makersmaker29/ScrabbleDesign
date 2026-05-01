@@ -266,7 +266,7 @@ document.getElementById('calc').onclick = () => {
 ` +
     `✅ Provide Your Delivery Address
 ` +
-    `Saya akan kongsikan butiran pembayaran setlah membuat pemilahan ye Beritahu saya jika ada sebarang pertanyaan ya 😊;
+    Saya akan kongsikan butiran pembayaran setlah membuat pemilahan ye Beritahu saya jika ada sebarang pertanyaan ya 😊;
 
 };
  
