@@ -228,7 +228,7 @@ document.getElementById('calc').onclick = () => {
   const bigBlackPrice = sell6 + bigBlackExtra;
 
   document.getElementById('priceText').value =
-    document.getElementById('priceText').value =
+
     `📌 Berikut adalah butiran harga untuk Scrabble Family Name Art :)
 
 ` +
