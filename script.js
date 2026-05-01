@@ -249,7 +249,9 @@ document.getElementById('calc').onclick = () => {
     `• Size: Anggaran. ${h6}cm (H) x ${w6}cm (W)
 
    ` +
-    `📦 Penghantaran: Standard 10–15 hari (Express tersedia atas permintaan)
+    `📦 Penghantaran: Standard 10–15 hari (Express  tersedia atas permintaan)
+
+    `+
     `💰 Pembayaran: Bank Transfer (DuitNow)
 ` +
     `Untuk teruskan pesanan:
