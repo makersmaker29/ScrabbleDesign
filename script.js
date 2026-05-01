@@ -251,7 +251,6 @@ document.getElementById('calc').onclick = () => {
    ` +
     `📦 Penghantaran: Standard 10–15 hari (Express tersedia atas permintaan)
     `💰 Pembayaran: Bank Transfer (DuitNow)
-
 ` +
     `Untuk teruskan pesanan:
 ` +
@@ -265,8 +264,7 @@ document.getElementById('calc').onclick = () => {
 ` +
     `✅ Provide Your Delivery Address
 ` +
-    `Saya akan kongsikan butiran pembayaran setlah membuat pemilahan ye Beritahu saya jika ada sebarang pertanyaan ya 😊`;
-
+    `Saya akan kongsikan butiran pembayaran setlah membuat pemilahan ye Beritahu saya jika ada sebarang pertanyaan ya 😊;
 
 };
  
