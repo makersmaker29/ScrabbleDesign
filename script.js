@@ -184,6 +184,16 @@ document.getElementById('status').innerText = `Letters: ${i.letters}\n4cm: ${i.f
   currentIndex = (currentIndex + 1) % allLayouts.length;
 };
 
+let pricingTexts = null;
+
+document.getElementById('pricingBM').addEventListener('change', () => {
+  if (pricingTexts) {
+    document.getElementById('priceText').value =
+      document.getElementById('pricingBM').checked
+        ? pricingTexts.bm
+        : pricingTexts.default;
+  }
+});
 
 document.getElementById('calc').onclick = () => {
   if (allLayouts.length === 0) return alert("Generate first!");
@@ -227,47 +237,77 @@ document.getElementById('calc').onclick = () => {
   const smallBlackPrice = sell4 + smallBlackExtra;
   const bigBlackPrice = sell6 + bigBlackExtra;
 
-  document.getElementById('priceText').value =
+ // document.getElementById('priceText').value =
+  const defaultText =
 
-    `📌 Berikut adalah butiran harga untuk Scrabble Family Name Art :)
+    `📌 Below is the Scrabble Family Name Art Pricing 😊
 
 ` +
-    `Frame Kecil (Small Frame )
+    `Small Frame - RM
 ` +
     `• 🏳 White Combo Frame (RM ${sell4})
 ` +
     `• ⚫ Black Combo Frame (RM ${smallBlackPrice})
 ` +
-    `• Size: Anggaran. ${h4}cm (H) x ${w4}cm (W)
+    `• Estimated size: . ${h4}cm (H) x ${w4}cm (W)
 
 ` +
-    `Frame Besar( Big Frame)
+    ` Big Frame - RM 
 ` +
     `• 🏳 White Combo Frame (RM ${sell6})
 ` +
     `• ⚫ Black Combo Frame (RM ${bigBlackPrice})
 ` +
-    `• Size: Anggaran. ${h6}cm (H) x ${w6}cm (W)
+    `• Estimated size: . ${h6}cm (H) x ${w6}cm (W)
 
    ` +
-    `📦 Delivery/ Penghantaran: Standard: 10-15 days (Express available upon request)
+    `📦 Delivery: Standard: 10-15 days (Express available upon request)
 ` +
-    `💰 Payment/Pembayaran: Bank Transfer (DuitNow)
+    `💰 Payment: Bank Transfer (DuitNow)
 
 ` +
     `To Proceed:
 ` +
-    `✅ Confirm Frame Color combination (black/white) / Pilih Warna Kombinasi
+    `✅ Confirm Frame Color combination (black/white) 
 ` +
-    `✅ Choose size (big/small) / Pilih Saiz(Kecil/Besar)
+    `✅ Choose size (big/small) 
 ` +
-    `✅ Choose the name combination Option / Pilih Susunan nama(option)
+    `✅ Choose the name combination Option 
 ` +
-    `✅ Choose a Title (Choose from our list)/ Pilih tajuk (rujuk senarai kami)
+    `✅ Choose a Title (Choose from our list)
 ` + 
     `✅ Provide Your Delivery Address / Berikan alamat penghantaran
 ` +
     `Once confirmed, I'll share payment details. Let me know if you have any questions! 😊`;
+
+  const bmText = `📌 Berikut ialah butiran harga Scrabble Family Name Art 😊
+
+Frame Kecil
+• 🏳 Kombinasi Putih: RM ${sell4}
+• ⚫ Kombinasi Hitam: RM ${smallBlackPrice}
+• Anggaran saiz: ${h4} cm (tinggi) × ${w4} cm (lebar)
+
+Frame Besar
+• 🏳 Kombinasi Putih: RM ${sell6}
+• ⚫ Kombinasi Hitam: RM ${bigBlackPrice}
+• Anggaran saiz: ${h6} cm (tinggi) × ${w6} cm (lebar)
+
+📦 Tempoh siap: 10–15 hari bekerja selepas bayaran diterima. Tempahan segera boleh diminta.
+💰 Kaedah bayaran: Pindahan bank (DuitNow)
+
+Untuk meneruskan tempahan:
+✅ Pilih kombinasi warna bingkai (hitam/putih)
+✅ Pilih saiz (kecil/besar)
+✅ Pilih susunan nama yang disukai
+✅ Pilih tajuk daripada senarai kami
+✅ Berikan alamat penghantaran
+
+Selepas semuanya disahkan, saya akan kongsikan butiran bayaran. Jika ada sebarang pertanyaan, boleh beritahu saya ya 😊`;
+
+pricingTexts = { default: defaultText, bm: bmText };
+
+document.getElementById('priceText').value =
+  document.getElementById('pricingBM').checked ? bmText : defaultText;
 
 };
  
