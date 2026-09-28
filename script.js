@@ -107,7 +107,7 @@ function findAllFullLayouts(words, maxLayouts = 50, maxAttempts = 500) {
 function countLettersAndFrame(g) {
   let minR=H,maxR=0,minC=W,maxC=0,letters=0;
   g.forEach((row,r)=>row.forEach((ch,c)=>{ if(ch){ letters++; minR=Math.min(minR,r); maxR=Math.max(maxR,r); minC=Math.min(minC,c); maxC=Math.max(maxC,c); } }));
-  const w=maxC-minC+1, h=maxR-minR+1; return { letters, width: w, height: h, frame4: `${w*4 + 8} x ${h*4 +20}`, frame6: `${w*6+8} x ${h*6+20}` };
+  const w=maxC-minC+1, h=maxR-minR+1; return { letters, width: w, height: h, frame4: `${h*4 +20} x ${w*4 + 8}`, frame6: ` ${h*6+20} x ${w*6+8} ` };
 }
 function draw(g) {
   const combo = document.querySelector('input[name="style"]:checked').value;
